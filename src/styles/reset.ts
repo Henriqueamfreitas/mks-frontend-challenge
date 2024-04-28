@@ -52,11 +52,7 @@ export const Reset = createGlobalStyle`
     button, a{
         cursor: pointer;
     }
-    img{
-        button, a{
-            cursor: pointer;
-        }
-        width: 100px;
-        height: 100px;
+    button, a{
+        cursor: pointer;
     }
 `

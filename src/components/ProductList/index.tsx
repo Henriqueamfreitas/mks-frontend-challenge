@@ -1,13 +1,14 @@
 import { useContext } from "react"
 import { ProductCard } from "./ProductCard"
 import { ProductContext } from "../../providers/ProductContext"
+import { StyledProductList } from "./style"
 
 export const ProductList = () => {
     const { productList } = useContext(ProductContext)
     const products = productList?.products
 
     return(
-        <ul>
+        <StyledProductList>
             {
                 products?.map(product => {
                     return(
@@ -15,6 +16,6 @@ export const ProductList = () => {
                     )
                 })
             }
-        </ul>
+        </StyledProductList>
     )
 }
