@@ -32,11 +32,13 @@ export const ProductCart = () => {
             </div>
 
             {
+                cartList?.length === 0 ? 
+                <p>Você ainda não adicionou nenhum item ao carrinho</p>: 
                 <ul>
                     {productList?.products?.map((product) => (
                         cartFunction(product)
                     ))}
-                </ul>
+                </ul> 
             }
             <div>
                 <p>Total:</p>
