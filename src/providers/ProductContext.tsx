@@ -14,7 +14,14 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         const getProducts = async () => {
             try{
                 setIsLoading(true)
-                const { data } = await api.get("/products?page=1&rows=9&sortBy=id&orderBy=ASC")
+                const { data } = await api.get("/products", {
+                    params: {
+                        page: 1,
+                        rows: 9,
+                        sortBy: "id",
+                        orderBy: "ASC",
+                    }
+                })
                 setProductList(data)
             } catch (error){    
                 console.log(error)
