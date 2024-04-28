@@ -5,7 +5,8 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.75rem 4.0625rem;
+    gap: 3rem;
+    padding: 1.75rem 1.0625rem;
     img{
         width: 1.1875rem;
         height: 1.125rem;
@@ -26,5 +27,9 @@ export const StyledHeader = styled.header`
     button:hover{
         background-color: var(--color-grey300);
         transition: .5s;
+    }
+
+    @media (min-width: 720px){
+        padding: 1.75rem 4.0625rem;
     }
 `
