@@ -1,4 +1,5 @@
 import { ReactNode, SetStateAction } from "react";
+import { IProduct } from "./ProductInterface";
 
 export interface IProductCart {
     brand: string,
@@ -17,7 +18,9 @@ export interface ICartProviderProps {
 
 export interface ICartContext {
     cartList?: IProductCart[],
-    setCartList: React.Dispatch<React.SetStateAction<IProductCart[] | undefined>>,
+    setCartList: React.Dispatch<SetStateAction<IProductCart[]>>,
     cartIsOpen: boolean,
     setCartIsOpen: React.Dispatch<SetStateAction<boolean>>,
+    addProduct: (addingProduct: IProduct) => void,
+    removeProduct: (removingId: number) => void,
 }

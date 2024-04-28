@@ -1,8 +1,11 @@
 import { IProduct } from "../../../interfaces/ProductInterface"
 import shoppingBag from "../../../assets/shopping-bag.png"
+import { useContext } from "react"
+import { CartContext } from "../../../providers/CartContext"
 
 export const ProductCard = ({ product }: {product: IProduct}) => {
-    const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
+    const { cartList, setCartList, addProduct } = useContext(CartContext)
+    console.log(cartList)
 
     return(
         <li>
@@ -10,7 +13,7 @@ export const ProductCard = ({ product }: {product: IProduct}) => {
             <h2>{product.name}</h2>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <button>
+            <button onClick={() => addProduct(product)}>
                 Comprar
                 <img src={shoppingBag} alt="imagem de uma sacola de compras" />
             </button>

@@ -4,7 +4,6 @@ import { CartContext } from "../../providers/CartContext"
 
 export const Header = () => {
     const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
-    console.log(cartIsOpen)
     return(
         <header>
             <h1><span>MKS</span> <span>Sistemas</span></h1>
