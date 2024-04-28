@@ -7,8 +7,6 @@ import { CartContext, CartProvider } from "../providers/CartContext"
 import { ProductCart } from "../components/ProductCart"
 
 export const HomePage = () => {
-    const { isLoading } = useContext(ProductContext)
-    const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
     return (
         <main>
             <ProductProvider>

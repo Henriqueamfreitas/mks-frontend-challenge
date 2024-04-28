@@ -3,10 +3,12 @@ import { IProduct } from "../../../interfaces/ProductInterface"
 import { CartContext } from "../../../providers/CartContext"
 
 export const ProductCartCard = ({ product }: {product: IProduct}) => {
-    const { cartList, setCartList, addProduct, removeProduct, removeOneProduct } = useContext(CartContext)
+    const { cartList, addProduct, removeProduct, removeOneProduct } = useContext(CartContext)
     const filteredProduct = cartList?.filter(prod => prod.id === product.id)
     
-    const formatedPrice = (Number(product.price) * (filteredProduct?.length ?? 0)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const formatedPrice = (Number(product.price) * (filteredProduct?.length ?? 0)).toLocaleString('pt-BR', { 
+        style: 'currency', currency: 'BRL' 
+    })
 
     return(
         <li>

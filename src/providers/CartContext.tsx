@@ -1,7 +1,5 @@
-import { ReactNode, SetStateAction, createContext, useEffect, useState } from "react";
-import { api } from "../services/api";
+import { SetStateAction, createContext, useState } from "react";
 import { ICartContext, ICartProviderProps, IProductCart } from "../interfaces/CartInterface";
-import { IProduct } from "../interfaces/ProductInterface";
 
 export const CartContext = createContext<ICartContext>({
     setCartList: function (value: SetStateAction<IProductCart[]>): void {
@@ -11,7 +9,7 @@ export const CartContext = createContext<ICartContext>({
     setCartIsOpen: function (value: SetStateAction<boolean>): void {
         throw new Error("Function not implemented.");
     },
-    addProduct: function (addingProduct: IProduct): void {
+    addProduct: function (addingProduct: IProductCart): void {
         throw new Error("Function not implemented.");
     },
     removeProduct: function (removingId: number): void {
@@ -26,7 +24,7 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
     const [cartList, setCartList] = useState<IProductCart[]>([])
     const [cartIsOpen, setCartIsOpen] = useState(false)
 
-    const addProduct = (addingProduct: IProduct) => {
+    const addProduct = (addingProduct: IProductCart) => {
         setCartList([...cartList, addingProduct])
     }
 

@@ -5,7 +5,7 @@ import { ProductContext } from "../../providers/ProductContext"
 import { IProduct } from "../../interfaces/ProductInterface"
 
 export const ProductCart = () => {
-    const { cartIsOpen, setCartIsOpen, cartList } = useContext(CartContext)
+    const { setCartIsOpen, cartList } = useContext(CartContext)
     const { productList } = useContext(ProductContext)
     const total = cartList?.reduce((prevValue, product) => {
         return prevValue + Number(product.price);

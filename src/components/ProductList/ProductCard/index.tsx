@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { CartContext } from "../../../providers/CartContext"
 
 export const ProductCard = ({ product }: {product: IProduct}) => {
-    const { cartList, setCartList, addProduct } = useContext(CartContext)
+    const { addProduct } = useContext(CartContext)
 
     const formatedPrice = Number(product.price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
     return(

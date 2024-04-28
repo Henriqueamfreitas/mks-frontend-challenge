@@ -3,8 +3,8 @@ import cartImg from "../../assets/cartImg.png"
 import { CartContext } from "../../providers/CartContext"
 
 export const Header = () => {
-    const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
-    const { cartList, setCartList, addProduct, removeProduct, removeOneProduct } = useContext(CartContext)
+    const { setCartIsOpen } = useContext(CartContext)
+    const { cartList } = useContext(CartContext)
 
     return(
         <header>
