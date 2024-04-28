@@ -1,4 +1,4 @@
-import { IProduct } from "../../../interfaces"
+import { IProduct } from "../../../interfaces/ProductInterface"
 
 export const ProductCard = ({ product }: {product: IProduct}) => {
     return(

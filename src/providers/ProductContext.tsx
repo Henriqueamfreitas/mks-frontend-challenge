@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../services/api";
-import { IProductContext, IProduct, IProductList, IProductProviderProps } from "../interfaces";
+import { IProductContext, IProduct, IProductList, IProductProviderProps } from "../interfaces/ProductInterface";
 
 export const ProductContext = createContext<IProductContext>({})
 
