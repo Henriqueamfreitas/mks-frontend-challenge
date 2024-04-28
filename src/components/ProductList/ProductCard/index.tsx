@@ -6,11 +6,12 @@ import { CartContext } from "../../../providers/CartContext"
 export const ProductCard = ({ product }: {product: IProduct}) => {
     const { cartList, setCartList, addProduct } = useContext(CartContext)
 
+    const formatedPrice = Number(product.price).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
     return(
         <li>
             <img src={product.photo} alt={`imagem do produto ${product.name}`} />
             <h2>{product.name}</h2>
-            <p>{product.price}</p>
+            <p>{formatedPrice}</p>
             <p>{product.description}</p>
             <button onClick={() => addProduct(product)}>
                 Comprar

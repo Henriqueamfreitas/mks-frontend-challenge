@@ -16,6 +16,9 @@ export const CartContext = createContext<ICartContext>({
     },
     removeProduct: function (removingId: number): void {
         throw new Error("Function not implemented.");
+    },
+    removeOneProduct: function (removingId: number): void {
+        throw new Error("Function not implemented.");
     }
 })
 
@@ -41,8 +44,13 @@ export const CartProvider = ({ children }: ICartProviderProps) => {
         }
     }
 
+    const removeOneProduct = (removingId: number) => {
+        let remainingProducts = cartList.filter(prod => prod.id !== removingId)
+        setCartList(remainingProducts)
+    }
+
     return(
-        <CartContext.Provider value={{ cartList, setCartList, cartIsOpen, setCartIsOpen, addProduct, removeProduct }}>
+        <CartContext.Provider value={{ cartList, setCartList, cartIsOpen, setCartIsOpen, addProduct, removeProduct, removeOneProduct }}>
             {children}
         </CartContext.Provider>
     )

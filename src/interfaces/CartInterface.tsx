@@ -23,4 +23,5 @@ export interface ICartContext {
     setCartIsOpen: React.Dispatch<SetStateAction<boolean>>,
     addProduct: (addingProduct: IProduct) => void,
     removeProduct: (removingId: number) => void,
+    removeOneProduct: (removingId: number) => void, 
 }

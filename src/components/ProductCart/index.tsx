@@ -7,6 +7,11 @@ import { IProduct } from "../../interfaces/ProductInterface"
 export const ProductCart = () => {
     const { cartIsOpen, setCartIsOpen, cartList } = useContext(CartContext)
     const { productList } = useContext(ProductContext)
+    const total = cartList?.reduce((prevValue, product) => {
+        return prevValue + Number(product.price);
+     }, 0);
+    const formatedTotal = total?.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
 
     const cartFunction = (product: IProduct) => {
         const filteredProduct = cartList?.filter(prod => prod.id === product.id)
@@ -35,7 +40,7 @@ export const ProductCart = () => {
             }
             <div>
                 <p>Total:</p>
-                <p>0</p>
+                <p>{formatedTotal}</p>
             </div>
 
             <button>Finalizar compra</button>
