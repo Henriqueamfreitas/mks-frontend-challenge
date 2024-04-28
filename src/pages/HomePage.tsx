@@ -1,11 +1,13 @@
-import { ProductList } from "../components/ProductList"
+import { Header } from "../components/Header"
 import { ProductProvider } from "../providers/ProductContext"
+import { ProductList } from "../components/ProductList"
 
 export const HomePage = () => {
     return(
         <main>
             <ProductProvider>
-                <ProductList></ProductList>
+                <Header />
+                <ProductList/>
             </ProductProvider>
         </main>
     )

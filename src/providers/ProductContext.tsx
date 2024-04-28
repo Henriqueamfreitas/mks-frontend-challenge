@@ -1,32 +1,8 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { api } from "../services/api";
+import { IProductContext, IProduct, IProductList, IProductProviderProps } from "../interfaces";
 
-interface IProductContext {
-    productList?: IProductList,
-}
 export const ProductContext = createContext<IProductContext>({})
-
-interface IProduct {
-    brand: string,
-    createdAt: string,
-    description: string,
-    id: number,
-    name: string,
-    photo: string,
-    price: string,
-    updatedAt: string,
-}
-
-interface IProductList {
-    products: IProduct[],
-    count: number
-}
-
-
-
-interface IProductProviderProps {
-    children: ReactNode; 
-}
 
 export const ProductProvider = ({ children }: IProductProviderProps) => {
     const [productList, setProductList] = useState<IProductList>()
