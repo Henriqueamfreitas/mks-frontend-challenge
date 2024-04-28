@@ -2,6 +2,8 @@ import { IProduct } from "../../../interfaces/ProductInterface"
 import shoppingBag from "../../../assets/shopping-bag.png"
 
 export const ProductCard = ({ product }: {product: IProduct}) => {
+    const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
+
     return(
         <li>
             <img src={product.photo} alt={`imagem do produto ${product.name}`} />
