@@ -22,4 +22,5 @@ export interface IProductProviderProps {
 
 export interface IProductContext {
     productList?: IProductList,
+    isLoading: boolean,
 }
