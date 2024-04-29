@@ -21,6 +21,9 @@ export const StyledProductCart = styled.div`
             }
             .closeModalButton{
                 position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 right: 1rem;
                 top: 1rem;
                 width: 38px;

@@ -21,6 +21,9 @@ export const StyledProductCartCard = styled.li`
         font-weight: 400;
         width: 25px;
         height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     img{
          width: 46px;
