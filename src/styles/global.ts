@@ -12,4 +12,10 @@ export const Global = createGlobalStyle`
         --color-grey500: #2C2C2C;
         --color-grey600: #000000;
     }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
 `

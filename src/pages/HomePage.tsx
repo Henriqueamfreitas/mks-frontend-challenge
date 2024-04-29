@@ -5,19 +5,22 @@ import { Footer } from "../components/Footer"
 import { useContext } from "react"
 import { CartContext, CartProvider } from "../providers/CartContext"
 import { ProductCart } from "../components/ProductCart"
+import { StyledMain } from "./style"
 
 export const HomePage = () => {
     return (
-        <main>
+        <StyledMain>
             <ProductProvider>
                 <CartProvider>
                     <Header />
-                    <ProductConsumer />
+                    <div className="productsContainer">
+                        <ProductConsumer />
+                    </div>
                     <CartConsumer />
                     <Footer />
                 </CartProvider>
             </ProductProvider>
-        </main>
+        </StyledMain>
     )
 }
 

@@ -12,7 +12,7 @@ export const ProductCard = ({ product }: { product: IProduct }) => {
     return (
         <StyledProductCard>
             <div>
-                <img src={product.photo} alt={`imagem do produto ${product.name}`} />
+                <img className="productImage" src={product.photo} alt={`imagem do produto ${product.name}`} />
                 <div>
                     <StyledH2 fontColor="grey500" fontSize="16" fontWeight="400">{product.name}</StyledH2>
                     <StyledP fontColor="grey0" fontSize="15" fontWeight="700">{formatedPrice}</StyledP>
