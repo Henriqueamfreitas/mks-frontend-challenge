@@ -23,6 +23,8 @@ export const StyledProductCart = styled.div`
                 position: absolute;
                 right: 1rem;
                 top: 1rem;
+                width: 38px;
+                height: 38px;
                 border: none;
                 background-color: var(--color-grey600);
                 border-radius: 50%;
@@ -41,7 +43,7 @@ export const StyledProductCart = styled.div`
             max-height: 162px;
             height: 162px;
             overflow-y: scroll;
-            padding: .25rem;
+            padding: .5rem 1rem 0rem 0rem;
         }
 
         .emptyCarMessage{

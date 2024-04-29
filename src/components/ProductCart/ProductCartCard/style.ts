@@ -19,6 +19,8 @@ export const StyledProductCartCard = styled.li`
         border-radius: 50%;
         font-size: 0.875rem;
         font-weight: 400;
+        width: 25px;
+        height: 25px;
     }
     img{
          width: 46px;
