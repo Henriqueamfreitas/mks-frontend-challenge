@@ -1,4 +1,4 @@
-import { SetStateAction, createContext, useState } from "react";
+import { SetStateAction, createContext, useEffect, useState } from "react";
 import { ICartContext, ICartProviderProps, IProductCart } from "../interfaces/CartInterface";
 
 export const CartContext = createContext<ICartContext>({
@@ -21,8 +21,15 @@ export const CartContext = createContext<ICartContext>({
 })
 
 export const CartProvider = ({ children }: ICartProviderProps) => {
-    const [cartList, setCartList] = useState<IProductCart[]>([])
+    const localStorageCartList = localStorage.getItem("@MKSCartList")
+
+    const [cartList, setCartList] = useState<IProductCart[]>(localStorageCartList ? JSON.parse(localStorageCartList) : [])
     const [cartIsOpen, setCartIsOpen] = useState(false)
+
+
+    useEffect(() => {
+        localStorage.setItem("@MKSCartList", JSON.stringify(cartList))
+    }, [cartList])
 
     const addProduct = (addingProduct: IProductCart) => {
         setCartList([...cartList, addingProduct])
