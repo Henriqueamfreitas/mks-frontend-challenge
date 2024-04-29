@@ -1,7 +1,7 @@
 import styled, { css, CSSObject } from "styled-components";
 
 interface Props {
-    fontSize: "10" | "12" | "14" | "15"  | "16" | "18" | "20" | "22" | "24" | "40",
+    fontSize: "5" | "8" |  "10" |  "12" | "13" | "14" | "15"  | "16" | "18" | "20" | "22" | "24" | "27" | "28" | "40",
     fontWeight: "300" | "400" | "500" | "600" | "700" | "800" | "900",
     fontColor: "grey0" | "grey100" | "grey200" | "grey300" | "grey400" | "grey500" | "grey600",
 }

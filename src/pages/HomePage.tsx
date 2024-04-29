@@ -16,7 +16,9 @@ export const HomePage = () => {
                     <div className="productsContainer">
                         <ProductConsumer />
                     </div>
-                    <CartConsumer />
+                    <div className="modalContainer">
+                        <CartConsumer />
+                    </div>
                     <Footer />
                 </CartProvider>
             </ProductProvider>

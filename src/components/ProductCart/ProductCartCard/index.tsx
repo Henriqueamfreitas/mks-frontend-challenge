@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import { IProduct } from "../../../interfaces/ProductInterface"
 import { CartContext } from "../../../providers/CartContext"
+import { StyledProductCartCard } from "./style"
+import { StyledH2, StyledP, StyledSpan } from "../../../styles/tipography"
 
 export const ProductCartCard = ({ product }: {product: IProduct}) => {
     const { cartList, addProduct, removeProduct, removeOneProduct } = useContext(CartContext)
@@ -11,19 +13,19 @@ export const ProductCartCard = ({ product }: {product: IProduct}) => {
     })
 
     return(
-        <li>
+        <StyledProductCartCard>
             <img src={product.photo} alt={`imagem do produto ${product.name}`} />
-            <button onClick={() => removeOneProduct(product.id)}>X</button>
-            <h2>{product.name}</h2>
+            <button className="excludeAllButton" onClick={() => removeOneProduct(product.id)}>X</button>
+            <StyledH2 fontColor="grey500" fontWeight="400" fontSize="13">{product.name}</StyledH2>
             <div>
-                <span>Qtd:</span>
+                <StyledSpan fontColor="grey600" fontSize="5" fontWeight="400">Qtd:</StyledSpan>
                 <div>
-                    <button onClick={() => removeProduct(product.id)}>-</button>
-                    <span>{filteredProduct?.length}</span>
-                    <button onClick={() => addProduct(product)}>+</button>
+                    <button className="addRemoveButton" onClick={() => removeProduct(product.id)}>-</button>
+                    <StyledSpan fontColor="grey600" fontSize="8" fontWeight="400">{filteredProduct?.length}</StyledSpan>
+                    <button className="addRemoveButton"  onClick={() => addProduct(product)}>+</button>
                 </div>
             </div>
-            <p>{formatedPrice}</p>
-        </li>
+            <StyledP fontColor="grey600" fontSize="14" fontWeight="700">{formatedPrice}</StyledP>
+        </StyledProductCartCard>
     )
 }
