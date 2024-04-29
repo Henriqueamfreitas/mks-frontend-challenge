@@ -14,7 +14,7 @@ export const StyledProductCard = styled.li`
         img{
             align-self: center;
             width: 111px;
-            height: 108px;
+            height: 90px;
         }
         div{
             height: 50px;

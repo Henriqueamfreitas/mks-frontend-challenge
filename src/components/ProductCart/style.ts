@@ -78,10 +78,12 @@ export const StyledProductCart = styled.div`
     }
 
     @media (min-width: 720px){
+        background-color: transparent;
         justify-content: flex-end;
         align-items: flex-start;
-
+        
         section{
+            box-shadow: -5px 0 6px 0 rgba(0, 0, 0, 0.13);
             height: 100vh;
             width: 486px;
             padding: 2.25rem 2.9375rem;

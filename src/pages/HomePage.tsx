@@ -6,6 +6,7 @@ import { useContext } from "react"
 import { CartContext, CartProvider } from "../providers/CartContext"
 import { ProductCart } from "../components/ProductCart"
 import { StyledMain } from "./style"
+import { Loading } from "../components/Loading"
 
 export const HomePage = () => {
     return (
@@ -31,10 +32,14 @@ const ProductConsumer = () => {
 
     return (
         <>
-            {isLoading ? <p>Loading...</p> : <ProductList />}
+            {/* {isLoading ? <p>Loading...</p> : <ProductList />} */}
+            {isLoading ? <Loading /> : <ProductList />}
         </>
     );
 };
+
+
+
 
 const CartConsumer = () => {
     const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
