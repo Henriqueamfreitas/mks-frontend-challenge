@@ -4,7 +4,7 @@ export const StyledProductCartCard = styled.li`
     display: flex;
     background-color: var(--color-grey0);
     border-radius: .5rem;
-    justify-content: space-between;
+    gap: .5rem;
     align-items: center;
     position: relative;
     padding: .5rem;
@@ -30,12 +30,19 @@ export const StyledProductCartCard = styled.li`
          height: 57px;
     }
 
+    h2{
+        width: 40%;
+        max-width: 40%;
+    }
     div{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: .5rem;
         div{
+            border: solid 0.3px var(--color-grey300);
+            border-radius: .25rem;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -43,6 +50,11 @@ export const StyledProductCartCard = styled.li`
             button{
                 border: none;
                 background-color: transparent;
+            }
+            span{
+                border-left: solid 0.3px var(--color-grey300);
+                border-right: solid 0.3px var(--color-grey300);
+                padding: 0rem .5rem;
             }
         }
     }
