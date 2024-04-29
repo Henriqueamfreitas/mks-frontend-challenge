@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 export const Global = createGlobalStyle`
     :root{
         --color-brand: #0F52BA;
+        --color-brandHover: #083D82;
 
         --color-grey0: #FFFFFF;
         --color-grey100: rgba(0, 0, 0, 0.05);

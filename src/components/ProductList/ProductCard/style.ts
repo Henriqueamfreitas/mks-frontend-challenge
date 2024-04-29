@@ -53,7 +53,10 @@ export const StyledProductCard = styled.li`
         align-items: center;
         gap: .5rem;
         padding: 0.4375rem 0rem;
+        transition: .5s;
     }
-
-    @media (min-width: 720px){}
+    button:hover{
+        background-color: var(--color-brandHover);
+        transition: .5s;
+    }
 `
