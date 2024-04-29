@@ -5,9 +5,10 @@ import { ProductContext } from "../../providers/ProductContext"
 import { IProduct } from "../../interfaces/ProductInterface"
 import { StyledProductCart } from "./style"
 import { StyledH2, StyledP } from "../../styles/tipography"
+import { AnimatePresence, motion } from "framer-motion"
 
 export const ProductCart = () => {
-    const { setCartIsOpen, cartList } = useContext(CartContext)
+    const { cartIsOpen, setCartIsOpen, cartList } = useContext(CartContext)
     const { productList } = useContext(ProductContext)
     const total = cartList?.reduce((prevValue, product) => {
         return prevValue + Number(product.price);
@@ -51,7 +52,10 @@ export const ProductCart = () => {
 
     return (
         <StyledProductCart>
-            <section ref={modalRef}>
+            
+            <section                
+                ref={modalRef}
+            >
                 <div>
                     <StyledH2 fontColor="grey0" fontSize="27" fontWeight="700">Carrinho de compras</StyledH2>
                     <button className="closeModalButton" onClick={() => setCartIsOpen(false)}>X</button>

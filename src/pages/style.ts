@@ -13,7 +13,7 @@ export const StyledMain = styled.main`
     @media (min-width: 720px){
         .productsContainer{
             height: fit-content;
-            padding: 2rem 15vw;
+            padding: 2.75rem 15vw;
             display: flex;
             justify-content: center;
             align-items: center;

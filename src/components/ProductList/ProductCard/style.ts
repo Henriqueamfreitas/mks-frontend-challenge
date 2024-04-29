@@ -4,8 +4,8 @@ export const StyledProductCard = styled.li`
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1352);
     width: 218px;
     min-width: 218px;
-    height: 292.8px;
-    max-height: 292.8px;
+    height: 282.8px;
+    max-height: 282.8px;
     border-radius: .5rem;
     div{
         display: flex;
@@ -14,7 +14,7 @@ export const StyledProductCard = styled.li`
         img{
             align-self: center;
             width: 111px;
-            height: 90px;
+            height: 100px;
         }
         div{
             height: 50px;

@@ -7,6 +7,7 @@ import { CartContext, CartProvider } from "../providers/CartContext"
 import { ProductCart } from "../components/ProductCart"
 import { StyledMain } from "./style"
 import { Loading } from "../components/Loading"
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const HomePage = () => {
     return (
@@ -32,21 +33,27 @@ const ProductConsumer = () => {
 
     return (
         <>
-            {/* {isLoading ? <p>Loading...</p> : <ProductList />} */}
             {isLoading ? <Loading /> : <ProductList />}
         </>
     );
 };
 
 
-
-
 const CartConsumer = () => {
-    const { cartIsOpen, setCartIsOpen } = useContext(CartContext)
+    const { cartIsOpen, setCartIsOpen } = useContext(CartContext);
 
     return (
-        <>
-            {cartIsOpen ? <ProductCart /> : null}
-        </>
+        <AnimatePresence>
+            {cartIsOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 0 }}
+                    transition={{ duration: .3, ease: 'easeOut' }}
+                >
+                    <ProductCart />
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 };
